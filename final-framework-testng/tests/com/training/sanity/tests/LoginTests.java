@@ -4,7 +4,11 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -46,10 +50,27 @@ public class LoginTests {
 		driver.quit();
 	}
 	@Test
-	public void validLoginTest() {
+	public void validLoginTest() throws InterruptedException   {
 		loginPOM.sendUserName("admin");
-		loginPOM.sendPassword("admin@123");
+		loginPOM.Password1();
+		loginPOM.Password2();
+		loginPOM.Password3();
+		loginPOM.Password4();
 		loginPOM.clickLoginBtn(); 
+		Thread.sleep(3000);
+		loginPOM.personalBtn();
+		loginPOM.changepasswordBtn();
+		loginPOM.sendoldPassword("maha123");
+		loginPOM.sendnewPassword("maha@123");
+		loginPOM.sendnewPasswordConfirmation("maha@123");
+		loginPOM.loginBtn1(); 
+		Alert a=driver.switchTo().alert();
+		a.accept();
+		
+		
+		
+		
 		screenShot.captureScreenShot("First");
 	}
+	
 }
