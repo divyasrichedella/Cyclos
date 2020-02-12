@@ -115,4 +115,11 @@ public class AccountPOM {
 		alt.accept();
 		alt.accept();
 	}
+
+	public void assertHandle() {
+		
+		
+	}
+	
+	 
 }

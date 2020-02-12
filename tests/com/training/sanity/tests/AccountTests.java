@@ -60,6 +60,7 @@ public class AccountTests {
 		accountPOM.amountText();
 		accountPOM.repayBtn();
 		accountPOM.alertHandle();
+		accountPOM.assertHandle();
 		accountPOM.accoountInfo();
 	
 
