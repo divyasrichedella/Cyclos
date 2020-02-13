@@ -47,7 +47,7 @@ public class AccountTests {
 	}
 	@Test
 	public void validLoginTest() throws InterruptedException{
-		accountPOM.sendUserName("anil");
+		accountPOM.sendUserName("susmi");
 		accountPOM.password1();
 		accountPOM.password2();
 		accountPOM.password3();
@@ -60,7 +60,7 @@ public class AccountTests {
 		accountPOM.amountText();
 		accountPOM.repayBtn();
 		accountPOM.alertHandle();
-		accountPOM.assertHandle();
+		accountPOM.alertHandle2();
 		accountPOM.accoountInfo();
 	
 

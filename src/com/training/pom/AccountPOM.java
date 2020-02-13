@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import org.testng.Assert;
+
 public class AccountPOM {
 	private WebDriver driver; 
 	
@@ -104,22 +106,26 @@ public class AccountPOM {
 		
 	}
 	
-
+	public void alertHandle(){
+		Alert alt=driver.switchTo().alert();
+		alt.accept();
+	}
+	
+	public void alertHandle2() {
+		Alert alert=driver.switchTo().alert();
+		String expected="The repayment was succesfully processed";
+		String actual=alert.getText();
+		Assert.assertEquals(expected, actual);
+		alert.accept();
+		
+	}
+	
 	public void accoountInfo() {
 		this.accountInfo.click();
 		
 	}
-	
-	public void alertHandle(){
-		Alert alt=driver.switchTo().alert();
-		alt.accept();
-		alt.accept();
-	}
 
-	public void assertHandle() {
-		
-		
-	}
+	
 	
 	 
 }

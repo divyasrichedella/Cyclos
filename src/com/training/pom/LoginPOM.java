@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import org.testng.Assert;
+
 public class LoginPOM {
 	private WebDriver driver; 
 	
@@ -112,6 +114,9 @@ public class LoginPOM {
 	
 	public void alertHandle() {
 	Alert alt=driver.switchTo().alert();
+	String expected="Profile modified";
+	String actual=alt.getText();
+	Assert.assertEquals(expected, actual);
 	alt.accept();
 
 	}	
