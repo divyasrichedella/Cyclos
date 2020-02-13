@@ -52,24 +52,36 @@ public class LoginTests {
 	@Test
 	public void validLoginTest() throws InterruptedException{
 		loginPOM.sendUserName("admin");
-		loginPOM.Password1();
-		loginPOM.Password2();
-		loginPOM.Password3();
-		loginPOM.Password4();
-		Thread.sleep(3000);
-		loginPOM.clickLoginBtn();
-		Actions act=new Actions(driver);
-		WebElement personal=driver.findElement(By.xpath("//*[@id='menu1']/span[2]"));
-		WebElement changepassword=driver.findElement(By.xpath("//li[@id='submenu1.1']"));
-		act.moveToElement(personal).click().perform();
-		act.moveToElement(changepassword).click().perform();
-		driver.findElement(By.xpath("//input[@name='oldPassword']")).sendKeys("1234");
-		driver.findElement(By.xpath("//input[@name='newPassword']")).sendKeys("123456");
-		driver.findElement(By.xpath("//input[@name='newPasswordConfirmation']")).sendKeys("654321");
-		driver.findElement(By.xpath("//input[@type='submit']")).click();
-		Thread.sleep(2000);
-		Alert a=driver.switchTo().alert();
-	
+		loginPOM.But1();
+		loginPOM.But2();
+		loginPOM.But3();
+		loginPOM.But4();
+		loginPOM.submit();
+		loginPOM.member1();
+        Thread.sleep(3000);
+       loginPOM.grant1();  
+       loginPOM.loan1();
+       loginPOM.dep();
+       loginPOM.subm();
+       loginPOM.subm1();
+       Alert ae=driver.switchTo().alert();
+	   ae.accept();
+       loginPOM.viewloan1();
+       loginPOM.logout1();
+       Alert a=driver.switchTo().alert();
+       a.accept();
+		loginPOM.sendUserName("pavan");
+		loginPOM.But11();
+		loginPOM.But21();
+		loginPOM.But31();
+		loginPOM.But41();
+        loginPOM.submit1();
+		
+		loginPOM.accountLink();
+		loginPOM.loansLink();
+		loginPOM.viewIcon();
+		loginPOM.amountText();
+		loginPOM.repayBtn();
 		
 		screenShot.captureScreenShot("First");
 	}
