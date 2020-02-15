@@ -7,11 +7,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
-public class LoginPOM1 {
+public class LoginPOM2 {
 	private WebDriver driver; 
 	
-	public LoginPOM1(WebDriver driver) {
+	public LoginPOM2(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 	}
@@ -40,13 +41,20 @@ public class LoginPOM1 {
 	@FindBy(id="memberUsername")
 	private WebElement memberTextbox;
 	
-	@FindBy(xpath="//input[@linkurl='memberAds?memberId=10']")
- 	private WebElement manageAdv;
-
-     
+	@FindBy(xpath="//*[@id='tdContents']/table[1]/tbody/tr[2]/td/table/tbody/tr[2]/td/fieldset/table/tbody/tr[2]/td[2]/input")
+ 	private WebElement chngpermission;
 	
-     @FindBy(xpath="//img[@title='Remove']")
-     private WebElement Remove;
+	@FindBy(xpath="//select[@name='newGroupId']")
+ 	private WebElement newgroup;
+	
+    @FindBy(xpath="//textarea[@name='comments']")
+    private WebElement comment;
+	
+    @FindBy(xpath="//input[@value='Submit']")
+    private WebElement submit1;
+	
+    
+    
      
 	public void sendUserName(String userName) {
 		this.userName.sendKeys(userName);
@@ -69,12 +77,13 @@ public class LoginPOM1 {
 		this.password5.click(); 
 	}	
 	
+	
 	public void clickLoginBtn() {
 		this.loginButn.click(); 
 	}
 
-	public void memberTextbox() {
-		this.memberTextbox.sendKeys("aman");
+	public void memberTextbox(String memberLogin ) {
+		this.memberTextbox.sendKeys(memberLogin);
 		
 	}
 
@@ -83,48 +92,31 @@ public class LoginPOM1 {
 		Thread.sleep(3000);  
 		a.executeScript("window.scrollBy(0,700)");
 	}
-	public void manageAdv() {
-		this.manageAdv.click();
+	public void ChngPerm() {
+		this.chngpermission.click();
 	}
-
-	public void Remove() {
+	public void list() {
+		this.newgroup.click();
+		Select s = new Select(this.newgroup);
+		s.selectByIndex(2);
+	}
+	
+	
+	public void Comment(String comments){
+		this.comment.sendKeys(comments);
 		
-		this.Remove.click();
 	}
-	public void AlertHandleForRemove()
-	{
-		Alert alt=driver.switchTo().alert();
-		alt.accept();
+	
+	public void clickSubmit1(){
+		this.submit1.click();
 	}
+	
 	public void AlertHandleToConfirm()
 	{
 		Alert alt=driver.switchTo().alert();
 		alt.accept();
 	}
-	@FindBy(xpath="//li[@linkurl='/do/logout?fromMenu=true']")
-	private WebElement logout;
-	public void logoutBtn()
-	{
-		this.logout.click();
-	}
-	public void AlertHandleToLogout()
-	{
-		Alert alt=driver.switchTo().alert();
-		alt.accept();
-	}
-	
-	@FindBy(xpath="//*[@id='menu1']/span[2]")
-	private WebElement personal;
-	public void personalBtn()
-	{
-		this.personal.click();
-	}
-	@FindBy(xpath="//*[@id='submenu1.2']/span[2]")
-	private WebElement advertisement;
-	public void advertisementBtn()
-	{
-		this.advertisement.click();
-	}
+
 	
 	
 

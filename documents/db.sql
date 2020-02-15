@@ -1,7 +1,9 @@
-create table login(
-username varchar(50) not null,
-password varchar(50));
 
 
-insert into login values("admin", "admin@123"); 
-insert into login values("naveen", "testing@123"); 
+
+create table search1(memberLogin varchar(20) not null,
+    comments varchar(20));
+    
+    insert into search1 values("aman","dshdgsf");
+    insert into search1 values("kiran","fdff");
+        
