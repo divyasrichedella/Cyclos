@@ -20,9 +20,14 @@ public class LoginDataProviders {
 		int count = 0; 
 		for(LoginBean temp : list){
 			Object[]  obj = new Object[2]; 
-			obj[0] = temp.getUserName(); 
-			obj[1] = temp.getPassword(); 
-			
+			obj[1] = temp.getMember_Login(); 
+
+			obj[1] = temp.getAmount(); 
+
+			obj[1] = temp.getTransaction_Type(); 
+
+			obj[1] = temp.getDescription(); 
+
 			result[count ++] = obj; 
 		}
 		
@@ -36,6 +41,11 @@ public class LoginDataProviders {
 		return new ApachePOIExcelRead().getExcelContent(fileName); 
 	}
 	
+	@DataProvider(name="cyclos")
+	public Object[][]getExcelContent(){
+		String filename="E:\\New folder\\Cycloscomplex.xlsx";
+		return new ApachePOIExcelRead().getExcelContent(filename);
+	}
 	@DataProvider(name = "xls-inputs")
 	public Object[][] getXLSData(){
 		// ensure you will have the title as first line in the file 

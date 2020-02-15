@@ -1,37 +1,56 @@
 package com.training.bean;
 
 public class LoginBean {
-	private String userName;
-	private String password;
+	//private String userName;
+	//private String password;
+	private String Member_Login;
+	private String Amount;
+	private String Transaction_Type;
+	private String Description;
 
 	public LoginBean() {
 	}
 
-	public LoginBean(String userName, String password) {
+	public LoginBean(String Member_Login,String Amount,String Transaction_Type,String Description) {
 		super();
-		this.userName = userName;
-		this.password = password;
+		this.Member_Login = Member_Login;
+		this.Amount =  Amount;
+		this.Transaction_Type =  Transaction_Type;
+        this.Description =  Description;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getMember_Login(){
+		return Member_Login;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setMember_Login(String Member_Login){
+		this.Member_Login = Member_Login;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getAmount(){
+		return Amount;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setAmount(String Amount) {
+		this.Amount = Amount;
 	}
-
+		
+	public String getTransaction_Type() {
+		return getTransaction_Type();
+	}
+	public void setTransaction_Type(String Transaction_Type) {
+		this.Transaction_Type = Transaction_Type;
+	}
+	public String getDescription() {
+		return getDescription();
+	}
+	public void setDescription(String Description) {
+		this.Description =Description;
+	}
+	
 	@Override
 	public String toString() {
-		return "LoginBean [userName=" + userName + ", password=" + password + "]";
+	return "LoginBean [Member_Login=" + Member_Login + ", Amount=" + Amount + ",Transaction_Type=" + Transaction_Type +",Description=" +Description + "]";
 	}
 
 }
