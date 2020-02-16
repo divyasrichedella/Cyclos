@@ -1,7 +1,9 @@
 create table login(
-username varchar(50) not null,
-password varchar(50));
+login varchar(50) not null,
+amount int(10),
+description varchar(50),
+memberlogin varchar(50) not null);
 
 
-insert into login values("admin", "admin@123"); 
-insert into login values("naveen", "testing@123"); 
+insert into login values("sailaja","5000","bonus", "sailaja"); 
+insert into login values("manzoor","1000","description", "manzoor"); 

@@ -6,10 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class Medium_12 {
+public class ComplexPOM {
 private WebDriver driver; 
 	
-	public Medium_12(WebDriver driver) {
+	public ComplexPOM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 	}
@@ -36,7 +36,7 @@ private WebDriver driver;
 	private WebElement memberpayment;
 	@FindBy(id="memberUsername")
 	private WebElement login; 
-	@FindBy(xpath="//input[@type='text']")
+	@FindBy(xpath="//input[@name='amount']")
 	private WebElement amount;
 	@FindBy(xpath="//select[@id='type']")
 	private WebElement transactiontype;
@@ -99,8 +99,9 @@ public void password4(){
 		this.login.click(); 
 	}
 	
-	public void sendAmount(String amounts) {
-		this.amount.sendKeys(amounts);
+	public void sendAmount(int amounts) {
+		String str= Integer.toString(amounts);
+		this.amount.sendKeys(str);
 	}
 	
 	public void list(){
